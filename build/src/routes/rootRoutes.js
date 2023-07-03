@@ -10,6 +10,7 @@ const rootController = require('../controllers/rootController');
 app.get('/', (req, res) => {
     const response = rootController.rootGetController();
     res.send(response);
+    res.sendStatus(200);
 });
 // POST method route
 app.post('/', (req, res) => {

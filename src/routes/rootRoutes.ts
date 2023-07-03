@@ -6,13 +6,12 @@ const rootController = require('../controllers/rootController');
 // GET method route
 app.get('/', (req: Request, res: Response) => {
     const response = rootController.rootGetController();
-    res.send(response);
-    res.sendStatus(200);
+    res.status(200).send(response);
 })
 
 // POST method route
 app.post('/', (req: Request, res: Response) => {
-    res.send('POST request to the homepage');
+    res.status(200).send('POST request to the homepage');
 })
 
 module.exports = app;
