@@ -6,7 +6,9 @@ const routes = require('./routes/rootRoutes');
 const app = express();
 const PORT = 8000;
 const swaggerDocument = require('../swagger.json');
+const cors = require('cors');
 
+app.use(cors());
 app.use("/", routes);
 
 app.listen(PORT, () => {
