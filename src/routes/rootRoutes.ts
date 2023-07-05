@@ -6,7 +6,8 @@ const rootController = require('../controllers/rootController');
 // GET method route
 app.get('/', (req: Request, res: Response) => {
     const response = rootController.rootGetController();
-    res.status(200).send(response);
+    res.statusCode = 200;
+    res.send(response);
 })
 
 // POST method route
