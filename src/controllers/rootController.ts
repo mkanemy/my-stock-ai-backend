@@ -1,9 +1,6 @@
 import { Request, Response } from "express";
 import { Client } from 'ts-postgres';
 
-const pgp = require('pg-promise')(/* options */)
-// const db = pgp('postgresql://localhost:5433/Matt')
-
 export async function rootGetController(req: Request, res: Response) {
     const client = new Client({"host": 'localhost', "port": 5433, "database": "Matt"});
     await client.connect();
@@ -26,8 +23,5 @@ export async function rootGetController(req: Request, res: Response) {
 
     } finally {
         return response;
-        // await client.end();
     }
-
-    return response;
 }
