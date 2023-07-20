@@ -1,9 +1,10 @@
 import { Client } from "ts-postgres/dist/src/client";
+const db = require('../configs/db.json');
 
 export async function dataQuery(query: string) {
     let dataResponse = [];
 
-    const client = new Client({"host": 'localhost', "port": 5433, "database": "Matt"});
+    const client = new Client({"host": db.host, "port": db.port, "database": db.database});
     await client.connect();
 
     const result = client.query(query);
