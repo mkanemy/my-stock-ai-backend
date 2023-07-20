@@ -5,9 +5,13 @@ const rootController = require('../controllers/rootController');
 
 // GET method route
 app.get('/', (req: Request, res: Response) => {
-    const response = rootController.rootGetController();
-    res.statusCode = 200;
-    res.send(response);
+    async function doRequest() {
+        const response = await rootController.rootGetController();
+        res.statusCode = 200;
+        res.send(response);
+    }
+
+    doRequest();
 })
 
 // POST method route
