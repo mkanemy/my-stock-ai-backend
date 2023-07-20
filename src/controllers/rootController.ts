@@ -1,25 +1,14 @@
 import { Request, Response } from "express";
-import { Client } from 'ts-postgres';
+import { dataQuery } from "../data/dataQuery";
 
 export async function rootGetController(req: Request, res: Response) {
-    const client = new Client({"host": 'localhost', "port": 5433, "database": "Matt"});
-    await client.connect();
-
     let response = "No Result";
 
-    try {
-        // Querying the client returns a query result promise
-        // which is also an asynchronous result iterator.
-        const result = client.query(
-            "SELECT * FROM msaitestdb LIMIT 1"
-        );
+try {
 
-        for await (const row of result) {
-            let rowResponse = row.get('test');
-            if (rowResponse) {
-                response = rowResponse.toString();
-            }
-        }
+        const data = await dataQuery("SELECT * FROM msaitestdb LIMIT 1");
+
+        response = data[0];
 
     } finally {
         return response;
