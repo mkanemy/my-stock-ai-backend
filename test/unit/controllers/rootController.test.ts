@@ -19,4 +19,18 @@ describe('Test Root Controller', function () {
 
     });
 
+    test('Test that root controller correctly returns error', async () => {
+        const mock = jest.spyOn(dataQuery, 'dataQuery');
+        mock.mockImplementation(() => {
+            throw new Error();
+        });
+
+        var req = mocks.createRequest();
+        var res = mocks.createResponse();
+
+        let response = root.rootGetController(req, res).then((data: any) =>
+            expect(data).toBe('Error')
+        );
+    });
+
 });
