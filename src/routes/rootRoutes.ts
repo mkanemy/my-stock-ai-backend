@@ -4,10 +4,14 @@ const app = express();
 const rootController = require('../controllers/rootController');
 
 // GET method route
-app.get('/', async (req: Request, res: Response) => {
-    const response = await rootController.rootGetController();
-    res.statusCode = 200;
-    res.send(response);
+app.get('/', (req: Request, res: Response) => {
+    async function doRequest() {
+        const response = await rootController.rootGetController();
+        res.statusCode = 200;
+        res.send(response);
+    }
+
+    doRequest();
 })
 
 // POST method route
