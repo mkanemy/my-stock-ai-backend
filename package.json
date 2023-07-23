@@ -8,7 +8,6 @@
     "start:dev": "npx nodemon",
     "start": "nodemon src/index.ts",
     "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add build",
     "build": "rimraf ./build && tsc"
   },
   "repository": {
@@ -46,7 +45,6 @@
   },
   "pre-commit": [
     "ts.check",
-    "build",
-    "add-build"
+    "build"
   ]
 }
