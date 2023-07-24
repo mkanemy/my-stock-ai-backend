@@ -1,5 +1,3 @@
 {
-    "host": "localhost",
-    "port": 5433,
-    "database": "Matt"
+    "url": "postgres://default:AXgTda7D0BPz@ep-hidden-wood-296409-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?sslmode=require"
 }
