@@ -8,6 +8,8 @@ const PORT = 8000;
 const swaggerDocument = require('../swagger.json');
 const cors = require('cors');
 
+require('dotenv').config()
+
 app.use(cors());
 app.use("/", routes);
 

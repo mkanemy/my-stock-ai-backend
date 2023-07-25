@@ -1,11 +1,10 @@
 const { Pool } = require("pg");
-const db = require('../configs/db.json');
 
 export async function dataQuery(query: string) {
     let dataResponse: string[] = [];
 
     const pool = new Pool({
-        connectionString: db.url + "?sslmode=require",
+        connectionString: process.env.SQL_URL + "?sslmode=require",
     })
 
     const result = await pool.query(query);
