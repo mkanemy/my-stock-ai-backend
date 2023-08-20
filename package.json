@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --rootDir=test",
     "start": "npx nodemon",
-    "build": "rimraf ./build && tsc"
+    "build": "rimraf ./api && tsc"
   },
   "repository": {
     "type": "git",
