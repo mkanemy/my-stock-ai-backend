@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 
 const app = express();
 const rootController = require('../controllers/rootController');
+const serverless = require('../../serverless-http');
 
 // GET method route
 app.get('/', (req: Request, res: Response) => {
@@ -21,4 +22,4 @@ app.post('/', (req: Request, res: Response) => {
 
 app.get('/favicon.ico', (req, res) => res.status(204));
 
-module.exports = app;
+module.exports.handler = serverless(app);
