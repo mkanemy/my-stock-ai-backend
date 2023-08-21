@@ -4,7 +4,7 @@ export async function dataQuery(query: string) {
     let dataResponse: string[] = [];
 
     const pool = new Pool({
-        connectionString: process.env.SQL_URL + "?sslmode=require",
+        connectionString: process.env.POSTGRES_URL + "?sslmode=require",
     })
 
     const result = await pool.query(query);
