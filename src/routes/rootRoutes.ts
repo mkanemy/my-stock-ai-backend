@@ -19,4 +19,6 @@ app.post('/', (req: Request, res: Response) => {
     res.status(200).send('POST request to the homepage');
 })
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 module.exports = app;
