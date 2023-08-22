@@ -1,13 +1,12 @@
 {
     "version": 2,
     "buildCommand": "npm run build",
-    "builds": [
-        {
-            "src": "build/src/index.js",
-            "use": "@vercel/node",
-            "config": { "includeFiles": ["build/api/**"] }
+    "functions": {
+        "build/api/**/*.js": {
+            "memory": 3008,
+            "maxDuration": 30
         }
-    ],
+    },
     "routes": [
         {
             "src": "/(.*)",
