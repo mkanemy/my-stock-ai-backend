@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const supertest_1 = __importDefault(require("supertest"));
 const express_1 = __importDefault(require("express"));
-const rootRoutes = require('../../../api/routes/rootRoutes');
-const rootController = require('../../../api/controllers/rootController');
+const rootRoutes = require('../../../src/routes/rootRoutes');
+const rootController = require('../../../src/controllers/rootController');
 const app = (0, express_1.default)();
 app.use('/', rootRoutes);
 describe('Test Root Routes', function () {

@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const mocks = require('node-mocks-http');
-const root = require('../../../api/controllers/rootController');
-const dataQuery = require('../../../api/data/dataQuery');
+const root = require('../../../src/controllers/rootController');
+const dataQuery = require('../../../src/data/dataQuery');
 describe('Test Root Controller', function () {
     test('root controller exists', () => __awaiter(this, void 0, void 0, function* () {
         // Given
