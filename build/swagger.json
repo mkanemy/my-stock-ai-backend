@@ -1,0 +1,52 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My Stock AI",
+        "description": "API for My Stock API"
+    },
+    "host": "localhost:8000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Root",
+            "description": "API for root"
+        }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": ["/"],
+                "summary": "Get root",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["/"],
+                "summary": "Get root",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "": {
+            "required": [""]
+        }
+    }
+}
