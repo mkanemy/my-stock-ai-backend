@@ -1,6 +1,6 @@
 const mocks = require('node-mocks-http');
-const root = require('../../../src/controllers/rootController');
-const dataQuery = require('../../../src/data/dataQuery');
+const root = require('../../../api/controllers/rootController');
+const dataQuery = require('../../../api/data/dataQuery');
 
 describe('Test Root Controller', function () {
 

@@ -1,7 +1,7 @@
 import request from 'supertest';
 import express from 'express';
-const rootRoutes = require('../../../src/routes/rootRoutes');
-const rootController = require('../../../src/controllers/rootController');
+const rootRoutes = require('../../../api/routes/rootRoutes');
+const rootController = require('../../../api/controllers/rootController');
 
 const app = express();
 app.use('/', rootRoutes);
