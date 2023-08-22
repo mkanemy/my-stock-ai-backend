@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --rootDir=test",
     "start": "vercel env pull .env && npx nodemon",
-    "build": "rimraf ./build && tsc"
+    "build": "rimraf ./build && tsc",
+    "add-build": "git add dist"
   },
   "repository": {
     "type": "git",
@@ -45,5 +46,10 @@
   },
   "engines": {
     "node": "18.x"
-  }
+  },
+  "pre-commit": [
+    "build",
+    "add-build",
+    "test"
+  ]
 }
