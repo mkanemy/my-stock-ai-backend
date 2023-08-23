@@ -12,7 +12,7 @@ describe('Test Root Routes', function () {
         const mock = jest.spyOn(rootController, 'rootGetController');
         mock.mockReturnValue('success!');
 
-        const res = await request(app).get('/');
+        const res = await request(app).get('/root');
 
         expect(res.statusCode).toEqual(200);
         expect(res.text).toEqual('success!');
@@ -20,7 +20,7 @@ describe('Test Root Routes', function () {
 
 
     test('Test that POST / root route exists and returns correctly', async () => {
-        const res = await request(app).post('/');
+        const res = await request(app).post('/root');
 
         expect(res.text).toEqual('POST request to the homepage');
     });

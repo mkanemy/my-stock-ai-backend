@@ -22,12 +22,12 @@ describe('Test Root Routes', function () {
     test('Test that GET / root route exists and returns correctly', () => __awaiter(this, void 0, void 0, function* () {
         const mock = jest.spyOn(rootController, 'rootGetController');
         mock.mockReturnValue('success!');
-        const res = yield (0, supertest_1.default)(app).get('/');
+        const res = yield (0, supertest_1.default)(app).get('/root');
         expect(res.statusCode).toEqual(200);
         expect(res.text).toEqual('success!');
     }));
     test('Test that POST / root route exists and returns correctly', () => __awaiter(this, void 0, void 0, function* () {
-        const res = yield (0, supertest_1.default)(app).post('/');
+        const res = yield (0, supertest_1.default)(app).post('/root');
         expect(res.text).toEqual('POST request to the homepage');
     }));
 });
