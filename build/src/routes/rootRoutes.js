@@ -16,7 +16,7 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const rootController = require('../controllers/rootController');
 // GET method route
-app.get('/', (req, res) => {
+app.get('/root', (req, res) => {
     function doRequest() {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield rootController.rootGetController();
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     doRequest();
 });
 // POST method route
-app.post('/', (req, res) => {
+app.post('/root', (req, res) => {
     res.status(200).send('POST request to the homepage');
 });
 app.get('/favicon.ico', (req, res) => res.status(204));
