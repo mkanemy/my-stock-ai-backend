@@ -8,5 +8,5 @@ export function stockGetDetailsController(req: Request, res: Response) {
         throw new Error('Incorrect Arguments pass ticker=[ticker] at end of query');
     }
 
-    stockService.getDetails(req.query.ticker, res);
+    stockService.getDetails(req.query.ticker, res)
 }
