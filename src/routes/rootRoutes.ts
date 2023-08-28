@@ -4,7 +4,7 @@ const app = express();
 const rootController = require('../controllers/rootController');
 
 // GET method route
-app.get('/root/:ticker', (req: Request, res: Response) => {
+app.get('/root', (req: Request, res: Response) => {
     async function doRequest() {
         const response = await rootController.rootGetController();
         res.statusCode = 200;

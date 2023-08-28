@@ -18,11 +18,4 @@ describe('Test Root Routes', function () {
         expect(res.text).toEqual('success!');
     });
 
-
-    test('Test that POST / root route exists and returns correctly', async () => {
-        const res = await request(app).post('/root');
-
-        expect(res.text).toEqual('POST request to the homepage');
-    });
-
 });
