@@ -7,7 +7,7 @@ const stockController = require('../controllers/stockController');
 // GET method route
 app.get('/details', (req: Request, res: Response) => {
     try {
-        const response = stockController.stockGetDetailsController(req, res);
+        stockController.stockGetDetailsController(req, res);
         res.statusCode = 200;
     } catch (e) {
         res.statusCode = 400;
