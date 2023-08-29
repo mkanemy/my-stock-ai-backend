@@ -32,13 +32,6 @@ export function getDetails(ticker: string, res: Response) {
         }
     })
 
-    finnhubClient.companyBasicFinancials(ticker, "ALL", (error: any, data: any, response: any) => {
-        if (res.write("\"financialMetrics\":" + JSON.stringify(data.metric))) {
-            writeJson(counter, res)
-            counter++
-        }
-    })
-
 }
 
 function writeJson(counter: number, res: Response) {
