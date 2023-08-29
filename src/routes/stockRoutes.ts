@@ -15,4 +15,15 @@ app.get('/details', (req: Request, res: Response) => {
     }
 })
 
+// GET method route
+app.get('/available', (req: Request, res: Response) => {
+    try {
+        stockController.stockGetAvailableController(req, res);
+        res.statusCode = 200;
+    } catch (e) {
+        res.statusCode = 400;
+        res.end('ERROR: ' + e)
+    }
+})
+
 module.exports = app;
