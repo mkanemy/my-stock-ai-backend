@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "jest --rootDir=test",
-    "start": "vercel env pull .env && npx nodemon",
+    "start": "vercel env pull .env && npx nodemon", 
     "build": "rimraf ./build && tsc && cp swagger.json build/",
     "add-build": "git add build"
   },

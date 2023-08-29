@@ -22,7 +22,7 @@ function getDetails(ticker, res) {
         }
     });
     finnhubClient.companyBasicFinancials(ticker, "ALL", (error, data, response) => {
-        if (res.write("\"financialMetrics\":" + JSON.stringify(data.metric))) {
+        if (res.write("\"financialMetrics\":" + JSON.stringify(data === null || data === void 0 ? void 0 : data.metric))) {
             writeJson(counter, res);
             counter++;
         }
