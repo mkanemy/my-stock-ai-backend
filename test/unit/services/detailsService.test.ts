@@ -5,7 +5,7 @@ const finnhubClient = new finnhub.DefaultApi()
 
 describe('Test Stock Details Service', function () {
 
-    test('stock details service exists happy path test', async () => {
+    test('stock details service exists happy path test', async () => { 
         // Given
         const mockQuote = jest.spyOn(finnhubClient, 'quote');
         mockQuote.mockReturnValue({});
