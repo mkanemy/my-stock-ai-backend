@@ -10,25 +10,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mocks = require('node-mocks-http');
-const root = require('../../../src/controllers/rootController');
-const dataQuery = require('../../../src/data/dataQuery');
-describe('Test Root Controller', function () {
-    test('root controller exists', () => __awaiter(this, void 0, void 0, function* () {
+const detailsService = require('../../../src/services/detailsService');
+const finnhub = require('finnhub');
+const finnhubClient = new finnhub.DefaultApi();
+describe('Test Stock Details Service', function () {
+    test('stock details service exists happy path test', () => __awaiter(this, void 0, void 0, function* () {
         // Given
-        const mock = jest.spyOn(dataQuery, 'dataQuery');
-        mock.mockReturnValue(['success!']);
+        const mockQuote = jest.spyOn(finnhubClient, 'quote');
+        mockQuote.mockReturnValue({});
+        const mockProfile = jest.spyOn(finnhubClient, 'companyProfile2');
+        mockProfile.mockReturnValue({});
+        const mockFinancials = jest.spyOn(finnhubClient, 'companyBasicFinancials');
+        mockFinancials.mockReturnValue({});
         var req = mocks.createRequest();
         var res = mocks.createResponse();
+        req.query.ticker = 'AAPL';
         // When / Then
-        let response = root.rootGetController(req, res).then((data) => expect(data).toBe('success!'));
-    }));
-    test('Test that root controller correctly returns error', () => __awaiter(this, void 0, void 0, function* () {
-        const mock = jest.spyOn(dataQuery, 'dataQuery');
-        mock.mockImplementation(() => {
-            throw new Error();
-        });
-        var req = mocks.createRequest();
-        var res = mocks.createResponse();
-        let response = root.rootGetController(req, res).then((data) => expect(data).toBe('Error'));
+        detailsService.getDetails(req, res);
     }));
 });

@@ -10,25 +10,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mocks = require('node-mocks-http');
-const root = require('../../../src/controllers/rootController');
-const dataQuery = require('../../../src/data/dataQuery');
-describe('Test Root Controller', function () {
-    test('root controller exists', () => __awaiter(this, void 0, void 0, function* () {
+const stock = require('../../../src/controllers/stockController');
+const detailsService = require('../../../src/services/detailsService');
+describe('Test Stock Controller', function () {
+    test('stock controller exists happy path test', () => __awaiter(this, void 0, void 0, function* () {
         // Given
-        const mock = jest.spyOn(dataQuery, 'dataQuery');
-        mock.mockReturnValue(['success!']);
+        const mock = jest.spyOn(detailsService, 'getDetails');
+        mock.mockReturnValue(true);
+        var req = mocks.createRequest();
+        var res = mocks.createResponse();
+        req.query.ticker = 'AAPL';
+        // When / Then
+        stock.stockGetDetailsController(req, res);
+    }));
+    test('stock controller improper argument gives error', () => __awaiter(this, void 0, void 0, function* () {
+        // Given
+        const mock = jest.spyOn(detailsService, 'getDetails');
+        mock.mockReturnValue(true);
         var req = mocks.createRequest();
         var res = mocks.createResponse();
         // When / Then
-        let response = root.rootGetController(req, res).then((data) => expect(data).toBe('success!'));
-    }));
-    test('Test that root controller correctly returns error', () => __awaiter(this, void 0, void 0, function* () {
-        const mock = jest.spyOn(dataQuery, 'dataQuery');
-        mock.mockImplementation(() => {
-            throw new Error();
-        });
-        var req = mocks.createRequest();
-        var res = mocks.createResponse();
-        let response = root.rootGetController(req, res).then((data) => expect(data).toBe('Error'));
+        expect(() => {
+            stock.stockGetDetailsController(req, res);
+        }).toThrow('Incorrect Arguments pass ticker=[ticker] at end of query');
     }));
 });

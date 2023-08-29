@@ -34,3 +34,5 @@ describe('Test Root Controller', function () {
     });
 
 });
+
+export {};
