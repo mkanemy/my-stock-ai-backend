@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-const stockService = require('../services/stockService');
+const detailsService = require('../services/detailsService');
 
 export function stockGetDetailsController(req: Request, res: Response) {
 
@@ -8,5 +8,5 @@ export function stockGetDetailsController(req: Request, res: Response) {
         throw new Error('Incorrect Arguments pass ticker=[ticker] at end of query');
     }
 
-    stockService.getDetails(req.query.ticker, res)
+    detailsService.getDetails(req.query.ticker, res)
 }
