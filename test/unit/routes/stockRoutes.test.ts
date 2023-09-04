@@ -20,4 +20,15 @@ describe('Test Stock Routes', function () {
         expect(res.statusCode).toEqual(400);
     });
 
+    test('Test that GET / available route correctly catches error', async () => {
+        const mock = jest.spyOn(stockController, 'stockGetAvailableController');
+        mock.mockImplementation(() => {
+            throw new Error();
+        });
+
+        const res = await request(stockApp).get('/available');
+
+        expect(res.statusCode).toEqual(400);
+    });
+
 });

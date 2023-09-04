@@ -1,6 +1,7 @@
 const mocks = require('node-mocks-http');
 const stock = require('../../../src/controllers/stockController');
 const detailsService = require('../../../src/services/detailsService')
+const availableStocksService = require('../../../src/services/availableStocksService')
 
 describe('Test Stock Controller', function () {
 
@@ -16,6 +17,21 @@ describe('Test Stock Controller', function () {
 
         // When / Then
         stock.stockGetDetailsController(req, res)
+
+    });
+
+    test('available stocks exists happy path test', async () => {
+        // Given
+        const mock = jest.spyOn(availableStocksService, 'getAvailable');
+        mock.mockReturnValue(true);
+
+        var res = mocks.createResponse();
+        var req = mocks.createRequest();
+
+        req.query.ticker = 'AAPL'
+
+        // When / Then
+        stock.stockGetAvailableController(req, res)
 
     });
 
