@@ -21,8 +21,8 @@ app.get('/details', (req, res) => {
 // GET method route
 app.get('/available', (req, res) => {
     try {
-        stockController.stockGetAvailableController(req, res);
         res.statusCode = 200;
+        stockController.stockGetAvailableController(req, res);
     }
     catch (e) {
         res.statusCode = 400;

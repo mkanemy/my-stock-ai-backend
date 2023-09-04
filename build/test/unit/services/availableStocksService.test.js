@@ -16,7 +16,9 @@ describe('Test Available Stocks Service', function () {
     test('available stocks service exists happy path test', () => __awaiter(this, void 0, void 0, function* () {
         // Given
         const mockQuote = jest.spyOn(superagent, 'get');
-        mockQuote.mockReturnValue({});
+        mockQuote.mockReturnValue(new Promise(() => {
+            [{ "description": "Test", "displaySymbol": "Test" }];
+        }));
         var res = mocks.createResponse();
         let ticker = 'AAPL';
         // When / Then
