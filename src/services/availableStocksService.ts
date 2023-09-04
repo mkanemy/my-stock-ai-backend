@@ -4,7 +4,7 @@ const finnhub = require('finnhub');
 export function getAvailable(ticker: string, res: Response) {
     const superagent = require('superagent');
 
-    superagent.get('https://finnhub.io/api/v1/stock/symbol?exchange=US&token=' + process.env.FINNHUB_API_KEY)
+    superagent.get('https://finnhub.io/api/v1/stock/symbol?exchange=US&mic=XNYS&token=' + process.env.FINNHUB_API_KEY)
     .end((err: any, response: any) => {
         if (err) { return console.log(response); }
 
