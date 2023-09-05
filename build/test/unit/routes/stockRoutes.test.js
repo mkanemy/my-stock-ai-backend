@@ -28,4 +28,12 @@ describe('Test Stock Routes', function () {
         const res = yield (0, supertest_1.default)(stockApp).get('/details');
         expect(res.statusCode).toEqual(400);
     }));
+    test('Test that GET / available route correctly catches error', () => __awaiter(this, void 0, void 0, function* () {
+        const mock = jest.spyOn(stockController, 'stockGetAvailableController');
+        mock.mockImplementation(() => {
+            throw new Error();
+        });
+        const res = yield (0, supertest_1.default)(stockApp).get('/available');
+        expect(res.statusCode).toEqual(400);
+    }));
 });

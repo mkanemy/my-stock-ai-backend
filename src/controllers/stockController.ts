@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 
 const detailsService = require('../services/detailsService');
+const availableStocksService = require('../services/availableStocksService');
 
 export function stockGetDetailsController(req: Request, res: Response) {
 
@@ -9,4 +10,8 @@ export function stockGetDetailsController(req: Request, res: Response) {
     }
 
     detailsService.getDetails(req.query.ticker, res)
+}
+
+export function stockGetAvailableController(req: Request, res: Response) {
+    availableStocksService.getAvailable(req.query.ticker, res)
 }
