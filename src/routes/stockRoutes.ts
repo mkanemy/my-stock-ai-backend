@@ -26,4 +26,15 @@ app.get('/available', (req: Request, res: Response) => {
     }
 })
 
+// GET method route
+app.get('/articles', (req: Request, res: Response) => {
+    try {
+        res.statusCode = 200;
+        stockController.stockGetNewsArticles(req, res);
+    } catch (e) {
+        res.statusCode = 400;
+        res.end('ERROR: ' + e)
+    }
+})
+
 module.exports = app;

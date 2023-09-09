@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mocks = require('node-mocks-http');
-const detailsService = require('../../../src/services/detailsService');
+const availableStocksService = require('../../../src/services/availableStocksService');
 const superagent = require('superagent');
 describe('Test Available Stocks Service', function () {
     test('available stocks service exists happy path test', () => __awaiter(this, void 0, void 0, function* () {
@@ -22,6 +22,6 @@ describe('Test Available Stocks Service', function () {
         var res = mocks.createResponse();
         let ticker = 'AAPL';
         // When / Then
-        detailsService.getDetails(ticker, res);
+        availableStocksService.getAvailable(ticker, res);
     }));
 });
