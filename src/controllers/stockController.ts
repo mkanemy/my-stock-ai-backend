@@ -14,7 +14,7 @@ export function stockGetDetailsController(req: Request, res: Response) {
 }
 
 export function stockGetAvailableController(req: Request, res: Response) {
-    availableStocksService.getAvailable(res)
+    availableStocksService.getAvailable(req, res)
 }
 
 export function stockGetNewsArticles(req: Request, res: Response) {

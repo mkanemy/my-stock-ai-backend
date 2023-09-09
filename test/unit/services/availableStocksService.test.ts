@@ -1,5 +1,5 @@
 const mocks = require('node-mocks-http');
-const availableStocksService = require('../../../src/services/availableStocksService')
+const detailsService = require('../../../src/services/detailsService')
 const superagent = require('superagent');
 
 describe('Test Available Stocks Service', function () {
@@ -13,11 +13,12 @@ describe('Test Available Stocks Service', function () {
         );
 
         var res = mocks.createResponse();
+        var req = mocks.createRequest();
 
         let ticker = 'AAPL'
 
         // When / Then
-        availableStocksService.getAvailable(ticker, res)
+        detailsService.getDetails(ticker, res)
     });
 });
 

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAvailable = void 0;
-function getAvailable(res) {
+function getAvailable(req, res) {
     const superagent = require('superagent');
     let isFirst = true;
     res.setHeader('Content-Type', 'application/json');

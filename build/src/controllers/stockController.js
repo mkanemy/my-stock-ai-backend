@@ -13,7 +13,7 @@ function stockGetDetailsController(req, res) {
 }
 exports.stockGetDetailsController = stockGetDetailsController;
 function stockGetAvailableController(req, res) {
-    availableStocksService.getAvailable(res);
+    availableStocksService.getAvailable(req, res);
 }
 exports.stockGetAvailableController = stockGetAvailableController;
 function stockGetNewsArticles(req, res) {

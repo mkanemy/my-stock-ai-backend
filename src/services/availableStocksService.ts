@@ -1,6 +1,6 @@
 import { Response } from "express";
 
-export function getAvailable(res: Response) {
+export function getAvailable(req:  Request, res: Response) {
     const superagent = require('superagent');
 
     let isFirst = true;
@@ -17,7 +17,7 @@ export function getAvailable(res: Response) {
         arr.pop()
 
         JSON.parse(response?.text).forEach((element: any) => {
-            arr.push({"description": element?.description, "symbol":element?.displaySymbol})
+            arr.push({"description": element?.description, "symbol": element?.displaySymbol})
         });
 
         isFirst = writeJson(isFirst, arr, res)
@@ -39,7 +39,7 @@ export function getAvailable(res: Response) {
     });
 }
 
-function  writeJson(isFirst: boolean, arr: {}[], res: Response<any, Record<string, any>>) {
+function writeJson(isFirst: boolean, arr: {}[], res: Response<any, Record<string, any>>) {
     if (isFirst) {
         res.write("\"data\":" + JSON.stringify(arr).slice(0, -1) + ",")
         return false;
