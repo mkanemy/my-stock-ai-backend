@@ -29,4 +29,15 @@ app.get('/available', (req, res) => {
         res.end('ERROR: ' + e);
     }
 });
+// GET method route
+app.get('/articles', (req, res) => {
+    try {
+        res.statusCode = 200;
+        stockController.stockGetNewsArticles(req, res);
+    }
+    catch (e) {
+        res.statusCode = 400;
+        res.end('ERROR: ' + e);
+    }
+});
 module.exports = app;

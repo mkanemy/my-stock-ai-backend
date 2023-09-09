@@ -20,6 +20,7 @@ describe('Test Available Stocks Service', function () {
             [{ "description": "Test", "displaySymbol": "Test" }];
         }));
         var res = mocks.createResponse();
+        var req = mocks.createRequest();
         let ticker = 'AAPL';
         // When / Then
         detailsService.getDetails(ticker, res);

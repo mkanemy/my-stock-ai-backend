@@ -13,6 +13,7 @@ describe('Test Available Stocks Service', function () {
         );
 
         var res = mocks.createResponse();
+        var req = mocks.createRequest();
 
         let ticker = 'AAPL'
 
