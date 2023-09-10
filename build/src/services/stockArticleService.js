@@ -6,7 +6,6 @@ function getRecentNewsArticles(ticker, res) {
     superagent.get('https://newsdata.io/api/1/news?apikey=' + process.env.NEWS_API_KEY + '&q=' + ticker.replace(/\+/g, '%20')) // + process.env.newsApiKey)
         .end((err, response) => {
         var _a, _b;
-        console.log(response);
         if (err) {
             return console.log(response);
         }
