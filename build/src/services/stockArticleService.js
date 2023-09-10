@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getRecentNewsArticles = void 0;
 function getRecentNewsArticles(ticker, res) {
     const superagent = require('superagent');
-    superagent.get('https://newsdata.io/api/1/news?apikey=' + process.env.NEWS_API_KEY + '&q=APPLE%20INC%20APPL%20Stock') // + process.env.newsApiKey)
+    superagent.get('https://newsdata.io/api/1/news?apikey=' + process.env.NEWS_API_KEY + '&q=' + ticker.replace(/\+/g, '%20')) // + process.env.newsApiKey)
         .end((err, response) => {
         var _a, _b;
         if (err) {

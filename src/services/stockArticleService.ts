@@ -3,7 +3,7 @@ import { Response } from "express";
 export function getRecentNewsArticles(ticker: String, res: Response) { 
     const superagent = require('superagent');
 
-    superagent.get('https://newsdata.io/api/1/news?apikey=' + process.env.NEWS_API_KEY + '&q=APPLE%20INC%20APPL%20Stock')// + process.env.newsApiKey)
+    superagent.get('https://newsdata.io/api/1/news?apikey=' + process.env.NEWS_API_KEY + '&q=' + ticker.replace(/\+/g, '%20'))// + process.env.newsApiKey)
     .end((err: any, response: any) => {
         if (err) { return console.log(response); }
 
