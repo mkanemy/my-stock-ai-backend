@@ -1,5 +1,4 @@
 import express, { Request, Response } from "express";
-import { initialize } from "express-openapi";
 import swaggerUi from "swagger-ui-express";
 
 const rootRoutes = require('./routes/rootRoutes');
@@ -9,6 +8,10 @@ const app = express();
 const PORT = 8000;
 const swaggerDocument = require('../swagger.json');
 const cors = require('cors');
+
+export const config = {
+    runtime: 'edge',
+};
 
 require('dotenv').config()
 
