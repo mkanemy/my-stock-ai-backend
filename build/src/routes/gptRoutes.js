@@ -17,8 +17,6 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
 app.disable("x-powered-by");
 const gptController = require('../controllers/gptController');
-const engine = require('express-edge');
-app.use(engine);
 // GET method route
 app.post('/summary', body_parser_1.default.json(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
