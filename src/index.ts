@@ -5,7 +5,7 @@ const rootRoutes = require('./routes/rootRoutes');
 const stockRoutes = require('./routes/stockRoutes');
 const gptRoutes = require('./routes/gptRoutes');
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;;
 const swaggerDocument = require('../swagger.json');
 const cors = require('cors');
 

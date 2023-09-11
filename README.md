@@ -8,7 +8,7 @@ Backend is deployed at production link - https://my-stock-ai-backend.vercel.app/
 
 ### CI/CD
 - Analysis pipeline run on PR's will test all the code, then use SonarQube to analyze the code
-- I use vercel to deploy environments for all PRs and then promote when they are merged
+- I use Heroku for deployments!
 
 ### Swagger
 http://localhost:8000/api-docs/#/
