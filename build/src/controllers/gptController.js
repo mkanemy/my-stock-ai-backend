@@ -14,7 +14,7 @@ const gptSummaryService = require('../services/gptSummaryService');
 function getArticleSummary(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         // Process input - article array & ticker
-        yield gptSummaryService.getSummary(req.body.ticker, req.body.companyName, req.body.articles, res);
+        yield gptSummaryService.getSummary(req.body.ticker, req.body.companyName, req.body.articles, req.body.quote, res);
     });
 }
 exports.getArticleSummary = getArticleSummary;
