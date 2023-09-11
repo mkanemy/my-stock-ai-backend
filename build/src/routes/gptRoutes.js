@@ -18,7 +18,7 @@ const app = (0, express_1.default)();
 app.disable("x-powered-by");
 const gptController = require('../controllers/gptController');
 // GET method route
-app.get('/summary', body_parser_1.default.json(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.post('/summary', body_parser_1.default.json(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         res.statusCode = 200;
         yield gptController.getArticleSummary(req, res);

@@ -6,7 +6,7 @@ app.disable("x-powered-by");
 const gptController = require('../controllers/gptController');
 
 // GET method route
-app.get('/summary', bodyParser.json(), async (req: Request, res: Response) => {
+app.post('/summary', bodyParser.json(), async (req: Request, res: Response) => {
     try {
         res.statusCode = 200;
         await gptController.getArticleSummary(req, res);

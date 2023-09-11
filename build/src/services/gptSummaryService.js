@@ -24,7 +24,7 @@ function getSummary(ticker, companyName, articles, res) {
             messages: [
                 {
                     "role": "system",
-                    "content": "I will provide you a stock ticker symbol and name of company along with a list of urls to recent news articles about that company. Your job is to create a summary in 150 words or less summarizing the significant news points about the company for investors. "
+                    "content": "I will provide you a stock ticker symbol and name of company along with a list of urls to recent news articles about that company. Your job is to create a summary in 200 words or less summarizing the significant news points about the company for investors. Make sure that the points of significance are mentioned!"
                 },
                 {
                     "role": "user",
