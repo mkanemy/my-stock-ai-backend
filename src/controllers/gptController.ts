@@ -1,10 +1,10 @@
-// import { Request, Response } from "express";
+import { Request, Response } from "express";
 
-// const gptSummaryService = require('../services/gptSummaryService');
+const gptSummaryService = require('../services/gptSummaryService');
 
-// export function getArticleSummary(req: Request, res: Response) {
+export async function getArticleSummary(req: Request, res: Response) {
 
-//     // Process input - article array & ticker
+    // Process input - article array & ticker
     
-//     gptSummaryService.getSummary(req.query.ticker, res)
-// }
+    await gptSummaryService.getSummary(req.body.ticker, req.body.companyName, req.body.articles, res)
+}

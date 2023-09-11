@@ -16,7 +16,7 @@ require('dotenv').config();
 app.use(cors());
 app.use("/", rootRoutes);
 app.use("/stock/", stockRoutes);
-// app.use("/ai/", gptRoutes);
+app.use("/ai/", gptRoutes);
 app.listen(PORT, () => {
     console.info(`Server listening on port ${PORT}`);
 });
