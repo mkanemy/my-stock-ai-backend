@@ -4,10 +4,9 @@ import bodyParser from 'body-parser';
 const app = express();
 app.disable("x-powered-by");
 const gptController = require('../controllers/gptController');
+const engine = require('express-edge');
 
-export const config = {
-    runtime: 'edge',
-};
+app.use(engine);
 
 // GET method route
 app.post('/summary', bodyParser.json(), async (req: Request, res: Response) => {
