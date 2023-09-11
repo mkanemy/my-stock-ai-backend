@@ -16,10 +16,6 @@ app.use("/", rootRoutes);
 app.use("/stock/", stockRoutes);
 app.use("/ai/", gptRoutes);
 
-const engine = require('express-edge');
-
-app.use(engine);
-
 app.listen(PORT, () => {
     console.info(`Server listening on port ${PORT}`);
 });
