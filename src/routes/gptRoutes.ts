@@ -5,6 +5,10 @@ const app = express();
 app.disable("x-powered-by");
 const gptController = require('../controllers/gptController');
 
+export const config = {
+    runtime: 'edge',
+};
+
 // GET method route
 app.post('/summary', bodyParser.json(), async (req: Request, res: Response) => {
     try {
