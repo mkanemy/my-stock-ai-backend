@@ -21,7 +21,7 @@ app.use(cors());
 app.use("/", rootRoutes);
 app.use("/stock/", stockRoutes);
 app.use("/ai/", gptRoutes);
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.info(`Server listening on port ${PORT}`);
 });
 app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocument));

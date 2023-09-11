@@ -20,7 +20,7 @@ app.use("/", rootRoutes);
 app.use("/stock/", stockRoutes);
 app.use("/ai/", gptRoutes);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.info(`Server listening on port ${PORT}`);
 });
 
