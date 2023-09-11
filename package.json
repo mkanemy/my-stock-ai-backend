@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "backend",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
     "test": "jest --rootDir=test",
     "start": "vercel env pull .env && npx nodemon",
